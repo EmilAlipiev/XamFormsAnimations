@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>XamFormsAnimations</PackageId>
+    <Authors>Emil Alipiev</Authors>
+    <Company>XamFormsAnimations</Company>
+    <Product>XamFormsAnimations</Product>
+    <Description>This is based on https://github.com/jsuarezruiz/Xamanimation
+I have added some more changes and improvements on original repo</Description>
+    <PackageTags>Xamarin.Forms, Animations, Xaml, Xamarin</PackageTags>
+    <PackageIcon>Animations.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +19,13 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Animations.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
