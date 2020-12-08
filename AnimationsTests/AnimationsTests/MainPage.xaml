@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:local="clr-namespace:AnimationsTests"
-    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimations">
+    xmlns:XamFormsAnimations="clr-namespace:XamFormsAnimations;assembly=XamFormsAnimations">
     <local:BaseModel.Resources>
         <ResourceDictionary>
             <Style x:Key="BoxViewOnlineSmartSenseTabsStyle" TargetType="BoxView">
@@ -21,100 +21,100 @@
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
                 <Setter Property="WidthRequest" Value="{OnIdiom Phone=24, Default=48}" />
             </Style>
-            <xamanimation:BounceInAnimation
+            <XamFormsAnimations:BounceInAnimation
                 x:Key="BounceInAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="500" />
 
-            <xamanimation:BounceOutAnimation
+            <XamFormsAnimations:BounceOutAnimation
                 x:Key="BounceOutAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="250" />
 
-            <xamanimation:FadeToAnimation
+            <XamFormsAnimations:FadeToAnimation
                 x:Key="FadeToAnimation"
                 Opacity="0"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="2000" />
 
-            <xamanimation:FlipAnimation
+            <XamFormsAnimations:FlipAnimation
                 x:Key="FlipAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="250" />
 
-            <xamanimation:RotateToAnimation
+            <XamFormsAnimations:RotateToAnimation
                 x:Key="RotateToAnimation"
                 Rotation="360"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="750" />
 
-            <xamanimation:ScaleToAnimation
+            <XamFormsAnimations:ScaleToAnimation
                 x:Key="ScaleToAnimation"
                 Scale="2"
                 Target="{x:Reference OnlineStatusBox2}" />
 
-            <xamanimation:TranslateToAnimation
+            <XamFormsAnimations:TranslateToAnimation
                 x:Key="TranslateToAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 TranslateX="200"
                 TranslateY="150" />
 
-            <xamanimation:TurnstileInAnimation
+            <XamFormsAnimations:TurnstileInAnimation
                 x:Key="TurnstileInAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="300" />
 
-            <xamanimation:TurnstileOutAnimation
+            <XamFormsAnimations:TurnstileOutAnimation
                 x:Key="TurnstileOutAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="150" />
 
-            <xamanimation:ShakeAnimation x:Key="ShakeAnimation" Target="{x:Reference OnlineStatusBox2}" />
+            <XamFormsAnimations:ShakeAnimation x:Key="ShakeAnimation" Target="{x:Reference OnlineStatusBox2}" />
 
-            <xamanimation:HeartAnimation
+            <XamFormsAnimations:HeartAnimation
                 x:Key="HeartAnimation"
                 Easing="SinOut"
                 RepeatForever="True"
                 Target="{x:Reference OnlineStatusBox2}"
                 Duration="800" />
 
-            <!--<xamanimation:JumpAnimation
+            <!--<XamFormsAnimations:JumpAnimation
                 x:Key="JumpAnimation"
                 Target="{x:Reference JumpBox}"
                 Duration="1500 Rep />-->
 
 
-            <xamanimation:ColorAnimation
+            <XamFormsAnimations:ColorAnimation
                 x:Key="ColorAnimation"
                 Target="{x:Reference OnlineStatusBox2}"
                 ToColor="Red"
                 Duration="1500" />
 
 
-            <xamanimation:StoryBoard
+            <XamFormsAnimations:StoryBoard
                 x:Key="StoryBoardStart"
                 Delay="1200"
                 RepeatForever="True"
                 Target="{x:Reference OnlineStatusBox2}">
-                <xamanimation:ScaleToAnimation
+                <XamFormsAnimations:ScaleToAnimation
                     Easing="SinIn"
                     Scale="2.6"
                     Duration="800" />
-                <xamanimation:FadeToAnimation Opacity="0" Duration="800" />
-                <xamanimation:ScaleToAnimation
+                <XamFormsAnimations:FadeToAnimation Opacity="0" Duration="800" />
+                <XamFormsAnimations:ScaleToAnimation
                     Easing="SinOut"
                     Scale="1"
                     Duration="0" />
-                <xamanimation:FadeToAnimation Opacity="0.8" Duration="0" />
-            </xamanimation:StoryBoard>
-            <xamanimation:StoryBoard
+                <XamFormsAnimations:FadeToAnimation Opacity="0.8" Duration="0" />
+            </XamFormsAnimations:StoryBoard>
+            <XamFormsAnimations:StoryBoard
                 x:Key="StoryBoardEnd"
                 Delay="0"
                 RepeatForever="False"
                 Target="{x:Reference OnlineStatusBox2}">
-                <xamanimation:ScaleToAnimation Easing="SinOut" Scale="1" />
-                <xamanimation:FadeToAnimation Opacity="0" />
-            </xamanimation:StoryBoard>
+                <XamFormsAnimations:ScaleToAnimation Easing="SinOut" Scale="1" />
+                <XamFormsAnimations:FadeToAnimation Opacity="0" />
+            </XamFormsAnimations:StoryBoard>
         </ResourceDictionary>
     </local:BaseModel.Resources>
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -156,11 +156,11 @@
             <BoxView.Triggers>
                 <Trigger TargetType="BoxView" Property="Color" Value="#1DD813">
                     <Trigger.EnterActions>
-                        <xamanimation:BeginAnimation Animation="{StaticResource StoryBoardStart}" />
+                        <XamFormsAnimations:BeginAnimation Animation="{StaticResource StoryBoardStart}" />
                     </Trigger.EnterActions>
 
                     <Trigger.ExitActions>
-                        <xamanimation:EndAnimation Animation="{StaticResource StoryBoardStart}" />
+                        <XamFormsAnimations:EndAnimation Animation="{StaticResource StoryBoardStart}" />
                     </Trigger.ExitActions>
                 </Trigger>
             </BoxView.Triggers>
@@ -202,7 +202,7 @@
             VerticalOptions="End">
                 <Button.Triggers>
                     <EventTrigger Event="Clicked">
-                        <xamanimation:BeginAnimation Animation="{StaticResource TranslateToAnimation}" />
+                        <XamFormsAnimations:BeginAnimation Animation="{StaticResource TranslateToAnimation}" />
                     </EventTrigger>
                 </Button.Triggers>
             </Button>

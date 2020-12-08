@@ -1,4 +1,4 @@
-﻿namespace Xamanimation
+﻿namespace XamFormsAnimations
 {
     using System;
     using Xamarin.Forms;

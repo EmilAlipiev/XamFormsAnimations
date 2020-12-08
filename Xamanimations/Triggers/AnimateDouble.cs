@@ -1,8 +1,8 @@
-﻿namespace Xamanimation
+﻿namespace XamFormsAnimations
 {
     using System;
     using System.Threading.Tasks;
-    using Xamanimation.Helpers;
+    using XamFormsAnimations.Helpers;
     using Xamarin.Forms;
 
     public class AnimateDouble : AnimationBaseTrigger<double>

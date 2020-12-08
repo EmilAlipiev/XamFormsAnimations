@@ -1,4 +1,4 @@
-﻿namespace Xamanimation.Behaviors
+﻿namespace XamFormsAnimations.Behaviors
 {
     using Xamarin.Forms;
 

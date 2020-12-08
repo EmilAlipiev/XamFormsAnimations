@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-using Xamanimation;
+using XamFormsAnimations;
 
 using Xamarin.Forms;
 

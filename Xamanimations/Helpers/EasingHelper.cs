@@ -1,4 +1,4 @@
-﻿namespace Xamanimation.Helpers
+﻿namespace XamFormsAnimations.Helpers
 {
     using Xamarin.Forms;
 

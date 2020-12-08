@@ -7,7 +7,7 @@
     <Authors>Emil Alipiev</Authors>
     <Company>XamFormsAnimations</Company>
     <Product>XamFormsAnimations</Product>
-    <Description>This is based on https://github.com/jsuarezruiz/Xamanimation
+    <Description>This is based on https://github.com/jsuarezruiz/XamFormsAnimations
 I have added some more changes and improvements on original repo</Description>
     <PackageTags>Xamarin.Forms, Animations, Xaml, Xamarin</PackageTags>
     <PackageIcon>Animations.png</PackageIcon>

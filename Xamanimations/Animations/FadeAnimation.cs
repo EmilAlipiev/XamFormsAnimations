@@ -1,4 +1,4 @@
-﻿namespace Xamanimation
+﻿namespace XamFormsAnimations
 {
     using Helpers;
     using System;

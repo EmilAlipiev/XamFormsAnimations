@@ -1,10 +1,10 @@
-﻿namespace Xamanimation
+﻿namespace XamFormsAnimations
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Xamanimation.Helpers;
+    using XamFormsAnimations.Helpers;
     using Xamarin.Forms;
 
     public class EntranceTransition : Behavior<VisualElement>

@@ -1,5 +1,5 @@
 ﻿// https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/custom/
-namespace Xamanimation
+namespace XamFormsAnimations
 {
     using System;
     using System.Threading.Tasks;

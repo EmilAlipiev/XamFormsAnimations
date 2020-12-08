@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationsTests.iOS", "Anim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimationsTests", "AnimationsTests\AnimationsTests\AnimationsTests.csproj", "{CEE23D71-9EBE-4FE3-9913-0BC6FFCED46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamanimations", "Xamanimations\Xamanimations.csproj", "{DF14595F-2649-4A01-AACE-172503410843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamFormsAnimations", "Xamanimations\XamFormsAnimations.csproj", "{DF14595F-2649-4A01-AACE-172503410843}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

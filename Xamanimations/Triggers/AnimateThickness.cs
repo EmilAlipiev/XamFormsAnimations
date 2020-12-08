@@ -1,8 +1,8 @@
-﻿namespace Xamanimation.Triggers
+﻿namespace XamFormsAnimations.Triggers
 {
     using System;
     using System.Threading.Tasks;
-    using Xamanimation.Helpers;
+    using XamFormsAnimations.Helpers;
     using Xamarin.Forms;
 
     public class AnimateThickness : AnimationBaseTrigger<Thickness>

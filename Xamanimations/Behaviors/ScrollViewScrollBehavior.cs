@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace Xamanimation
+namespace XamFormsAnimations
 {
     public class ScrollViewScrollBehavior : Behavior<ScrollView>
     {

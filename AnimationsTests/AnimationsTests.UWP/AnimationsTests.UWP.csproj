@@ -154,9 +154,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Xamanimations\Xamanimations.csproj">
+    <ProjectReference Include="..\..\Xamanimations\XamFormsAnimations.csproj">
       <Project>{df14595f-2649-4a01-aace-172503410843}</Project>
-      <Name>Xamanimations</Name>
+      <Name>XamFormsAnimations</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimationsTests\AnimationsTests.csproj">
       <Project>{40EB0FDA-73DF-4C1F-9F59-8A6109A3BB7B}</Project>

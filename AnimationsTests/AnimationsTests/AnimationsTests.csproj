@@ -26,6 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Xamanimations\Xamanimations.csproj" />
+    <ProjectReference Include="..\..\Xamanimations\XamFormsAnimations.csproj" />
   </ItemGroup>
 </Project>
