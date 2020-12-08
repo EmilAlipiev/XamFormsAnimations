@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseModel
+    x:Class="AnimationsTests.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:local="clr-namespace:AnimationsTests"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimations">
+    <local:BaseModel.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BoxViewOnlineSmartSenseTabsStyle" TargetType="BoxView">
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="HeightRequest" Value="8" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="8" />
+            </Style>
+            <Style x:Key="NotifyBadgeStyle" TargetType="ffimageloadingsvg:SvgCachedImage">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="HeightRequest" Value="{OnIdiom Phone=24, Default=48}" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="WidthRequest" Value="{OnIdiom Phone=24, Default=48}" />
+            </Style>
+            <xamanimation:BounceInAnimation
+                x:Key="BounceInAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="500" />
+
+            <xamanimation:BounceOutAnimation
+                x:Key="BounceOutAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="250" />
+
+            <xamanimation:FadeToAnimation
+                x:Key="FadeToAnimation"
+                Opacity="0"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="2000" />
+
+            <xamanimation:FlipAnimation
+                x:Key="FlipAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="250" />
+
+            <xamanimation:RotateToAnimation
+                x:Key="RotateToAnimation"
+                Rotation="360"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="750" />
+
+            <xamanimation:ScaleToAnimation
+                x:Key="ScaleToAnimation"
+                Scale="2"
+                Target="{x:Reference OnlineStatusBox2}" />
+
+            <xamanimation:TranslateToAnimation
+                x:Key="TranslateToAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                TranslateX="200"
+                TranslateY="150" />
+
+            <xamanimation:TurnstileInAnimation
+                x:Key="TurnstileInAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="300" />
+
+            <xamanimation:TurnstileOutAnimation
+                x:Key="TurnstileOutAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="150" />
+
+            <xamanimation:ShakeAnimation x:Key="ShakeAnimation" Target="{x:Reference OnlineStatusBox2}" />
+
+            <xamanimation:HeartAnimation
+                x:Key="HeartAnimation"
+                Easing="SinOut"
+                RepeatForever="True"
+                Target="{x:Reference OnlineStatusBox2}"
+                Duration="800" />
+
+            <!--<xamanimation:JumpAnimation
+                x:Key="JumpAnimation"
+                Target="{x:Reference JumpBox}"
+                Duration="1500 Rep />-->
+
+
+            <xamanimation:ColorAnimation
+                x:Key="ColorAnimation"
+                Target="{x:Reference OnlineStatusBox2}"
+                ToColor="Red"
+                Duration="1500" />
+
+
+            <xamanimation:StoryBoard
+                x:Key="StoryBoardStart"
+                Delay="1200"
+                RepeatForever="True"
+                Target="{x:Reference OnlineStatusBox2}">
+                <xamanimation:ScaleToAnimation
+                    Easing="SinIn"
+                    Scale="2.6"
+                    Duration="800" />
+                <xamanimation:FadeToAnimation Opacity="0" Duration="800" />
+                <xamanimation:ScaleToAnimation
+                    Easing="SinOut"
+                    Scale="1"
+                    Duration="0" />
+                <xamanimation:FadeToAnimation Opacity="0.8" Duration="0" />
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard
+                x:Key="StoryBoardEnd"
+                Delay="0"
+                RepeatForever="False"
+                Target="{x:Reference OnlineStatusBox2}">
+                <xamanimation:ScaleToAnimation Easing="SinOut" Scale="1" />
+                <xamanimation:FadeToAnimation Opacity="0" />
+            </xamanimation:StoryBoard>
+        </ResourceDictionary>
+    </local:BaseModel.Resources>
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <ffimageloadingsvg:SvgCachedImage
+            x:Name="BadgeIcon"
+            AbsoluteLayout.LayoutBounds=".5,0,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+         
+            Source="resource://AnimationsTests.bell2.svg"
+            Style="{StaticResource NotifyBadgeStyle}" />
+
+        <BoxView
+            x:Name="OnlineStatusBox2"
+            AbsoluteLayout.LayoutBounds=".5,.5,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            CornerRadius="15"
+            HeightRequest="30"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="30"
+            Color="Red" />
+        <Button
+            Grid.Row="1"
+            AbsoluteLayout.LayoutBounds=".5,1,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="Green"
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center"
+            Text="Breath"
+            VerticalOptions="End" />
+
+        <!--<BoxView Opacity="0.8"
+            x:Name="OnlineStatusBox2"
+            AbsoluteLayout.LayoutBounds=".5,.5,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Style="{StaticResource BoxViewOnlineSmartSenseTabsStyle}"
+            Color="{Binding Color}">
+            <BoxView.Triggers>
+                <Trigger TargetType="BoxView" Property="Color" Value="#1DD813">
+                    <Trigger.EnterActions>
+                        <xamanimation:BeginAnimation Animation="{StaticResource StoryBoardStart}" />
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <xamanimation:EndAnimation Animation="{StaticResource StoryBoardStart}" />
+                    </Trigger.ExitActions>
+                </Trigger>
+            </BoxView.Triggers>
+        </BoxView>
+        <Button
+            Grid.Row="1"
+            AbsoluteLayout.LayoutBounds=".5,1,-1,-1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            BackgroundColor="Green"
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center"
+            Text="Breath"
+            VerticalOptions="End" />-->
+        <!--<StackLayout VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                <BoxView
+                x:Name="OnlineStatusBox2"
+                CornerRadius="4"
+                HeightRequest="8"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="8"
+                Color="Green" />
+                <BoxView
+                x:Name="OnlineStatusBox"
+                CornerRadius="4"
+                HeightRequest="8"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="8"
+                Color="Green" />
+
+            </Grid>
+            <Button
+            Grid.Row="1"
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center"
+            Text="Breath"
+            VerticalOptions="End">
+                <Button.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <xamanimation:BeginAnimation Animation="{StaticResource TranslateToAnimation}" />
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>-->
+    </AbsoluteLayout>
+
+</local:BaseModel>
