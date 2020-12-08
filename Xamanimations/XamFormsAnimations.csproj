@@ -1,33 +1,68 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>XamFormsAnimations</PackageId>
-    <Authors>Emil Alipiev</Authors>
-    <Company>XamFormsAnimations</Company>
-    <Product>XamFormsAnimations</Product>
-    <Description>This is based on https://github.com/jsuarezruiz/XamFormsAnimations
-I have added some more changes and improvements on original repo</Description>
-    <PackageTags>Xamarin.Forms, Animations, Xaml, Xamarin</PackageTags>
-    <PackageIcon>Animations.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/EmilAlipiev/XamFormsAnimations</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/EmilAlipiev/XamFormsAnimations</RepositoryUrl>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>	 
+		<PackageId>XamFormsAnimations</PackageId>
+		<Authors>Emil Alipiev</Authors>
+		<Company>XamFormsAnimations</Company>
+		<Product>XamFormsAnimations</Product>
+		<Description>
+			This is based on https://github.com/jsuarezruiz/XamFormsAnimations
+			I have added some more changes and improvements on original repo
+		</Description>
+		<PackageTags>Xamarin.Forms, Animations, Xaml, Xamarin</PackageTags>
+		<PackageIcon>Animations.png</PackageIcon>
+		<PackageProjectUrl>https://github.com/EmilAlipiev/XamFormsAnimations</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/EmilAlipiev/XamFormsAnimations</RepositoryUrl>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Extensions\AnimationExtension.cs" />
-  </ItemGroup>
+	<PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+		<DebugSymbols>true</DebugSymbols>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-  </ItemGroup>
+	<PropertyGroup Condition=" '$(Configuration)'=='Release' ">
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\Animations.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup Condition=" '$(Configuration)'=='Release' And '$(OS)' == 'Windows_NT' ">
+		<!-- sourcelink: Declare that the Repository URL can be published to NuSpec -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<!-- sourcelink: Embed source files that are not tracked by the source control manager to the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!-- sourcelink: Include PDB in the built .nupkg -->
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>  
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Extensions\AnimationExtension.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Animations.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
 
 </Project>
