@@ -11,6 +11,8 @@
 I have added some more changes and improvements on original repo</Description>
     <PackageTags>Xamarin.Forms, Animations, Xaml, Xamarin</PackageTags>
     <PackageIcon>Animations.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/EmilAlipiev/XamFormsAnimations</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/EmilAlipiev/XamFormsAnimations</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
